@@ -7,6 +7,12 @@ This CSS renders a ribbon with minimal markup.
 
 There’s a css and a [less](http://lesscss.org/) version, as well as two corresponding html examples included.
 
+## Preview #
+
+A preview of CSS Ribbon is available on CSSDeck:
+
+[http://cssdeck.com/labs/hgvfj4sge3]()
+
 ## Disclaimer #
 
 Please note: The CSS is mostly untested and might not be working in older browsers. It should degrade gracefully, though.
