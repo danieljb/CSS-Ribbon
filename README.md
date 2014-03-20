@@ -7,7 +7,13 @@ This CSS renders a ribbon with minimal markup.
 
 There’s a css and a [less](http://lesscss.org/) version, as well as two corresponding html examples included.
 
-
-### Disclaimer #
+## Disclaimer #
 
 Please note: The CSS is mostly untested and might not be working in older browsers. It should degrade gracefully, though.
+
+## Copyright #
+
+CSS-Ribbon is distributed under MIT License. 
+You should have received a copy of the MIT License along with CSS-Ribbon.  
+
+Copyright (c) 2014, Daniel J. Becker
