@@ -9,9 +9,7 @@ There’s a css and a [less](http://lesscss.org/) version, as well as two corres
 
 ## Preview #
 
-A preview of CSS Ribbon is available on CSSDeck:
-
-[http://cssdeck.com/labs/hgvfj4sge3]()
+A preview of CSS Ribbon is available on [CSSDeck](http://cssdeck.com/labs/hgvfj4sge3).
 
 ## Disclaimer #
 
