@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Minimal Markup CSS Ribbon
+   ========================================================================== */
+
+/**
+ * This CSS renders a ribbon with minimal markup.
+ * Example: <h1 class="ribbon">Hello ribbon</h1>
+ *
+ */
+
+.ribbon {
+	position: relative;
+	width: 80%;
+	min-width: 4.5em;
+	margin: 0 auto 3.5em auto;
+	padding: 1em 0;
+	color: #EEE;
+	background-color: #699199;
+	font-size: 1em;
+	text-align: center;
+	line-height: 1.5em;
+	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.ribbon:before,
+.ribbon:after {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: -1;
+	width: 3.5em;
+	height: 0;
+	bottom: -1.75em;
+	margin-bottom: 0;
+	overflow: hidden;
+	border: 1.75em solid #699199;
+}
+
+.ribbon:before {
+	left: -5.25em;
+	border-left-color: transparent;
+	border-right-color: #4f6b71;
+}
+
+.ribbon:after {
+	right: -5.25em;
+	border-right-color: transparent;
+	border-left-color: #4f6b71;
+}
