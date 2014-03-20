@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Minimal Markup CSS Ribbon
+   ========================================================================== */
+
+/**
+ * This CSS renders a ribbon with minimal markup.
+ * Example: <h1 class="ribbon">Hello ribbon</h1>
+ *
+ * @color 				Defines the ribbon’s color
+ * @font-size 			Ribbon’s text font size
+ * @line-height 		Ribbon’s text line height
+ * @ribbon-height 		Ribbon’s height. Determines space above and below text
+ * @flag-width-ratio 	A factor determining how far the flags are extended
+ *
+ */
+
+.ribbon(
+		@color: #699199, 
+		@font-size: 1em, 
+		@line-height: 1.5em, 
+		@ribbon-height: 3.5em, 
+		@flag-width-ratio: 1) {
+
+	// Selective darken / desaturate filter to create shadow illusions
+	.border-right-color(@color) when (saturation(@color) > 30%) {
+		border-right-color: desaturate(darken(@color, 7.5%), 15%);
+	}
+	.border-right-color(@color) when (saturation(@color) < 30%) {
+		border-right-color: desaturate(darken(@color, 13%), 1%);
+	}
+
+	.border-left-color(@color) when (saturation(@color) > 30%) {
+		border-left-color: desaturate(darken(@color, 7.5%), 15%);
+	}
+	.border-left-color(@color) when (saturation(@color) < 30%) {
+		border-left-color: desaturate(darken(@color, 13%), 1%);
+	}
+
+	@ribbon-flag-width: @ribbon-height / (1 / @flag-width-ratio);
+	@padding-top: (@ribbon-height - 1.5) /2;
+
+	position: relative;
+
+	// min-width to prevent hiccups in extreme use cases
+	width: 80%;
+	min-width: @line-height *3;
+	margin: 0 auto @ribbon-height auto;
+	padding: @padding-top 0;
+
+	color: contrast(@color, #111, #EEE, 50%);
+	background-color: @color;
+
+	font-size: 1em;
+	text-align: center;
+	line-height: 1.5em;
+
+	box-shadow: 1px 2px 4px fade(#000, 15%);
+
+	&:before,
+	&:after {
+		content: "";
+
+		display: block;
+		position: absolute;
+
+		z-index: -1;
+		width: @ribbon-flag-width;
+		height: 0;
+		bottom: -(@ribbon-height /2);
+		margin-bottom: 0;
+
+		overflow: hidden;
+		border: (@ribbon-height /2) solid @color;
+	}
+
+	&:before {
+		left: -(@ribbon-flag-width + @ribbon-height / 2);
+
+		border-left-color: transparent;
+		.border-right-color(@color);
+	}
+
+	&:after {
+		right: -(@ribbon-flag-width + @ribbon-height / 2);
+
+		border-right-color: transparent;
+		.border-left-color(@color);
+	}
+}
+
+.ribbon {
+	.ribbon();
+}
